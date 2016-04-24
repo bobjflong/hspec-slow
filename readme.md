@@ -8,17 +8,17 @@ Track and display slow specs in Hspec runs.
 main :: IO ()
 main = do
   conf <- configure 1
-  timedHspec conf $ \timed -> do
+  timedHspec conf $ \timed ->
     describe "Main" $ do
-     timed "Example 1" $ do
-       threadDelay 3000000
-       1 `shouldBe` 1
-     timed "Example 2" $ do
-       threadDelay 1000
-       1 `shouldBe` 1
-     timed "Example 3" $ do
-       threadDelay 4000000
-       1 `shouldBe` 1
+      timed "Example 1" $ do
+        threadDelay 3000000
+        1 `shouldBe` 1
+      timed "Example 2" $ do
+        threadDelay 1000
+        1 `shouldBe` 1
+      timed "Example 3" $ do
+        threadDelay 4000000
+        1 `shouldBe` 1
 ```
 
 ## Example Output

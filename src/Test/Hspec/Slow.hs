@@ -29,21 +29,20 @@ configure x =
 
 stopwatch :: MonadIO m => m a -> m (a, NominalDiffTime)
 stopwatch x = do
-  start <- liftIO $ getCurrentTime
+  start <- liftIO getCurrentTime
   !a <- x
-  end <- liftIO $ getCurrentTime
+  end <- liftIO getCurrentTime
   return (a, end `diffUTCTime` start)
 
 trackedAction :: MonadIO m => String -> m a -> ReaderT SlowConfiguration m a
 trackedAction s m = do
   conf <- ask
   (result, d) <- lift (stopwatch m)
-  if (d > (realToFrac . duration $ conf))
+  if d > (realToFrac . duration $ conf)
     then do
       liftIO $ atomically $ modifyTVar (tracker conf) (++ [(s, d)])
       return result
-    else do
-      return result
+    else return result
 
 type Timer = forall m a. (MonadIO m, Example (m a)) => String -> m a -> SpecWith (Arg (m a))
 
@@ -54,7 +53,7 @@ slowReport :: (MonadIO m) => SlowConfiguration -> m ()
 slowReport s = do
   slows <- liftIO $ readTVarIO (tracker s)
   liftIO $ putStrLn "Slow examples:"
-  liftIO $ mapM_ (\(t, v) -> putStrLn $ (show v) ++ ": " ++ t) slows
+  liftIO $ mapM_ (\(t, v) -> putStrLn $ show v ++ ": " ++ t) slows
 
 timedHspec :: SlowConfiguration -> (Timer -> SpecWith ()) -> IO ()
 timedHspec t x = hspec $ (afterAll_ . slowReport) t $ x (timed t)
