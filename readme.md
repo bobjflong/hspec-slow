@@ -7,7 +7,7 @@ Track and display slow specs in Hspec runs.
 ```haskell
 main :: IO ()
 main = do
-  conf <- configure 1
+  conf <- configure 1 -- Track specs that take longer than 1s
   timedHspec conf $ \it ->
     describe "Main" $ do
       it "should foo" $ do
