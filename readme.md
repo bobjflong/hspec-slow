@@ -8,31 +8,31 @@ Track and display slow specs in Hspec runs.
 main :: IO ()
 main = do
   conf <- configure 1
-  timedHspec conf $ \timed ->
+  timedHspec conf $ \it ->
     describe "Main" $ do
-      timed "Example 1" $ do
+      it "should foo" $ do
         threadDelay 3000000
         1 `shouldBe` 1
-      timed "Example 2" $ do
+      it "should bar" $ do
         threadDelay 1000
         1 `shouldBe` 1
-      timed "Example 3" $ do
+      it "should baz" $ do
         threadDelay 4000000
-        1 `shouldBe` 1
+        1 `shouldBe` 1```
 ```
 
 ## Example Output
 
 ```
 Main
-  Example 1
-  Example 2
-  Example 3
+  should foo
+  should bar
+  should baz
 Slow examples:
-3.006113s: Example 1
-4.004954s: Example 3
+3.002925s: should foo
+4.006186s: should baz
 
-Finished in 7.0152 seconds
+Finished in 7.0141 seconds
 3 examples, 0 failures
 ```
 
@@ -48,18 +48,14 @@ timedHspecParallel conf $ \timed -> do
 Output:
 
 ```
-time stack test
-hspec-slow-0.1.0.0: test (suite: hspec-slow-test)
-
 Main
-  Example 1
-  Example 2
-  Example 3
+  should foo
+  should bar
+  should baz
 Slow examples:
-3.002526s: Example 1
-4.002236s: Example 3
+3.005728s: should foo
+4.00143s: should baz
 
-Finished in 4.0028 seconds
+Finished in 4.0024 seconds
 3 examples, 0 failures
-stack test  0.81s user 0.21s system 20% cpu 4.963 total
 ```
