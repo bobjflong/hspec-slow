@@ -1,0 +1,46 @@
+
+==================== FINAL INTERFACE ====================
+2016-04-24 13:20:56.308845 UTC
+
+interface main@main:Main 7103
+  interface hash: 34d720ad4b5a2b0736c5b5495b0f87e4
+  ABI hash: ef17dba184ece16dd87218068f2df694
+  export-list hash: af681759e71d8d18a2fc4cc046fa177c
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 1e50c479fc218cbee7d66e8ae79cc686
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.main
+module dependencies:
+package dependencies: base-4.8.2.0* ghc-prim-0.4.0.0
+                      hspec-slow-0.1.0.0@hspec_FtHM8mKbLiA3SrX2uu9DBQ integer-gmp-1.0.0.0
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Monoid
+                         base-4.8.2.0:Data.Type.Equality base-4.8.2.0:GHC.Generics
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  ghc-prim-0.4.0.0:GHC.Types 6b27fb3fdbd0e3f0925a4496c66513bb
+import  -/  hspec-slow-0.1.0.0@hspec_FtHM8mKbLiA3SrX2uu9DBQ:Lib f4169329233625d9f3871452a4e6c7c2
+055e49aa58cf61582ee2dd9b21e6fdf3
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Lib.someFunc1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+94747a93ab08223a946b8ac1fe0138e1
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Lib.someFunc1 `cast` (Sym (GHC.Types.NTCo:IO[0] <()>_R))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

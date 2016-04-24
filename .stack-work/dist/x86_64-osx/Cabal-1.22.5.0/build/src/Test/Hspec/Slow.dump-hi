@@ -1,0 +1,601 @@
+
+==================== FINAL INTERFACE ====================
+2016-04-24 14:32:26.394835 UTC
+
+interface hspec_4IgkMxl3I7R95RltXPXsx5:Test.Hspec.Slow 7103
+  interface hash: 7a950880b6589121eb2883f8d58c998b
+  ABI hash: 0201bd60c462871042896f84403ea46f
+  export-list hash: 91797d1ffa95615c43a6a6082f4c8713
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 91014b79ce0fc90498edd22f6848fe29
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Test.Hspec.Slow.slowReport
+  Test.Hspec.Slow.stopwatch
+  Test.Hspec.Slow.timed
+  Test.Hspec.Slow.timedHspec
+  Test.Hspec.Slow.trackedAction
+  Test.Hspec.Slow.SlowConfiguration{Test.Hspec.Slow.SlowConfiguration Test.Hspec.Slow.duration}
+  Test.Hspec.Slow.SlowResultTracker
+  Test.Hspec.Slow.SlowResults
+module dependencies:
+package dependencies: HUnit-1.3.1.1@HUnit_7IPmJa5HmrxHl6ny5upchm
+                      QuickCheck-2.8.1@Quick_8UnGnTXfSEEClQczG6tI7s
+                      ansi-terminal-0.6.2.3@ansit_BDlVdfJGo3VHCIHxPTNjH1
+                      array-0.5.1.0@array_67iodizgJQIIxYVTp4emlA
+                      async-2.1.0@async_KuqnF1GrhHK5nNp6Zzm3jy base-4.8.2.0
+                      containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU
+                      deepseq-1.4.1.1@deeps_6vMKxt5sPFR0XsbRWvvq59 ghc-prim-0.4.0.0
+                      hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h
+                      hspec-expectations-0.7.2@hspec_EI4zRR5iBcZEoRZjsgGwGV
+                      hspec-2.2.3@hspec_JWyjr3DNMsw1kiPzf88M5w integer-gmp-1.0.0.0
+                      mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8
+                      pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC
+                      primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3
+                      quickcheck-io-0.1.2@quick_A5Zzw8XvjxiJY6Cv5Y02Ts
+                      random-1.1@rando_9Kgekc9yEaLHLNUuw6paWL
+                      setenv-0.1.1.3@seten_6IUqFDI6NejGrNz9ulqEjc
+                      stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD template-haskell-2.10.0.0
+                      tf-random-0.5@tfran_1eLmkn3WUnC8NZpPuDLGKF
+                      time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn
+                      transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF
+orphans: base-4.8.2.0:GHC.Base base-4.8.2.0:GHC.Float
+         quickcheck-io-0.1.2@quick_A5Zzw8XvjxiJY6Cv5Y02Ts:Test.QuickCheck.IO
+         stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Calendar.Gregorian
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Format.Parse
+         time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.LocalTime.LocalTime
+         transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Error
+family instance modules: base-4.8.2.0:Control.Applicative
+                         base-4.8.2.0:Data.Either base-4.8.2.0:Data.Functor.Identity
+                         base-4.8.2.0:Data.Monoid base-4.8.2.0:Data.Type.Equality
+                         base-4.8.2.0:Data.Void base-4.8.2.0:GHC.Exts
+                         base-4.8.2.0:GHC.Generics
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Map.Base
+                         containers-0.5.6.2@conta_2C3ZI8RgPO2LBMidXKTvIU:Data.Set.Base
+                         hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h:Test.Hspec.Core.Example
+                         pretty-1.1.2.0@prett_JItwetRppk1H5Uq3xbjDGC:Text.PrettyPrint.HughesPJ
+                         primitive-0.6.1.0@primi_EphY2c7CCxSCBKjAN0YTR3:Control.Monad.Primitive
+                         template-haskell-2.10.0.0:Language.Haskell.TH.Syntax
+import  -/  base-4.8.2.0:Data.Foldable 2ce969969ad5231eb40bd713f94f05ad
+import  -/  base-4.8.2.0:GHC.Base 1db77db5dae73d8c424c85b09fbadb89
+import  -/  base-4.8.2.0:GHC.Conc.Sync e56817ef33471434aa51ef212cff6db1
+import  -/  base-4.8.2.0:GHC.Real 1281efa9baf803bc7859d7efb89a38b3
+import  -/  base-4.8.2.0:GHC.Show 0e1d8380a8fb0cfb07ebeda3b70cbf38
+import  -/  base-4.8.2.0:Prelude 694dcaf039efe62df1c44834e2dbd2fb
+import  -/  base-4.8.2.0:System.IO 0899686bfc1d9ef72dff3de85e99862a
+import  -/  ghc-prim-0.4.0.0:GHC.Classes e1f4ff80f7b5262008a595d29986fb18
+import  -/  hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h:Test.Hspec.Core.Example 29d12584315df554159bfb2cbf1632fc
+import  -/  hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h:Test.Hspec.Core.Hooks d4e43f05e3a606a00128ab86d1abf5e1
+import  -/  hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h:Test.Hspec.Core.Runner eb481e989351ff433c07a62329ef85f6
+import  -/  hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h:Test.Hspec.Core.Spec 249676bcc65c4c27255ff8bea8b813b0
+import  -/  hspec-core-2.2.3@hspec_4UV9BPgETueK7aJl0V8l4h:Test.Hspec.Core.Spec.Monad 772fc97980ec80c7ecd75b7ff7d47b17
+import  -/  hspec-2.2.3@hspec_JWyjr3DNMsw1kiPzf88M5w:Test.Hspec 8c6ce5342a85c03ed0e6052f899fd5c8
+import  -/  mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8:Control.Monad.Reader 5d43a64348db8e4860adc3213d905c28
+import  -/  mtl-2.2.1@mtl_Aue4leSeVkpKLsfHIV51E8:Control.Monad.Reader.Class e7b714ea62f67bcf45e3abed40e559d5
+import  -/  stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Concurrent.STM.TVar 7c5661f4dac9eed4b2a0e75ba9173351
+import  -/  stm-2.4.4.1@stm_EyxFXFfnfY05IrjGaqCxeD:Control.Monad.STM 1d34d1ebc6410b6e3cd93a4237d53f1b
+import  -/  time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Clock d187f9ce1132a97c33b2032a6709adce
+import  -/  time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Clock.UTC 904e7d633bb4c7cd80e960f3f4d7c4e1
+import  -/  time-1.5.0.1@time_FTheb6LSxyX1UABIbBXRfn:Data.Time.Clock.UTCDiff 1ac9790306d29e48ef2680e9c3f9130d
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.IO.Class 37487179a2f5eb2ea7922b911abcae56
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Class f629605e4c93de7ab5f6a3350107b4d1
+import  -/  transformers-0.4.2.0@trans_GZTjP9K5WFq01xC9BAGQpF:Control.Monad.Trans.Reader 70dc71c4262795d29d07da6093fd088a
+aa720d299ac02df9b0d767b72a8ca8f2
+  $wa ::
+    GHC.Prim.TVar# GHC.Prim.RealWorld Test.Hspec.Slow.SlowResults
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,U><L,U>, Inline: [0],
+     Unfolding: (\ ww :: GHC.Prim.TVar#
+                           GHC.Prim.RealWorld Test.Hspec.Slow.SlowResults
+                   w :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case GHC.Prim.readTVarIO#
+                        @ GHC.Prim.RealWorld
+                        @ Test.Hspec.Slow.SlowResults
+                        ww
+                        w of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Test.Hspec.Slow.slowReport3
+                        GHC.Types.True
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 Test.Hspec.Slow.slowReport2 ipv1 ipv2 } }) -}
+ee3f70e7afdd6ad2f758245ca294a75d
+  data SlowConfiguration
+    = SlowConfiguration {duration :: GHC.Types.Int}
+e2e105e09961ea405e0b75dcb296a761
+  type SlowResultTracker =
+    GHC.Conc.Sync.TVar Test.Hspec.Slow.SlowResults
+3658408c3f604b651d5dfdb27ed31a85
+  type SlowResults =
+    [(GHC.Base.String, Data.Time.Clock.UTC.NominalDiffTime)]
+e7529229609cfdb015dee18223122359
+  duration :: Test.Hspec.Slow.SlowConfiguration -> GHC.Types.Int
+  RecSel Test.Hspec.Slow.SlowConfiguration
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ ds :: Test.Hspec.Slow.SlowConfiguration ->
+                 case ds of wild { Test.Hspec.Slow.SlowConfiguration ds1 ->
+                 ds1 }) -}
+eaf6dd6effeec18bfdcd50d93df912b2
+  slowReport ::
+    Control.Monad.IO.Class.MonadIO m =>
+    Test.Hspec.Slow.SlowResultTracker -> m ()
+  {- Arity: 2, Strictness: <S(SL),U(1*U,U)><L,U(U)>,
+     Unfolding: (\ @ (m :: * -> *)
+                   $dMonadIO :: Control.Monad.IO.Class.MonadIO m
+                   eta :: Test.Hspec.Slow.SlowResultTracker ->
+                 let {
+                   lvl :: m ()
+                   = Control.Monad.IO.Class.liftIO
+                       @ m
+                       $dMonadIO
+                       @ ()
+                       Test.Hspec.Slow.slowReport5
+                         `cast`
+                       (Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                 } in
+                 let {
+                   lvl1 :: GHC.Types.IO () -> m ()
+                   = Control.Monad.IO.Class.liftIO @ m $dMonadIO @ ()
+                 } in
+                 let {
+                   $dMonad :: GHC.Base.Monad m
+                   = Control.Monad.IO.Class.$p1MonadIO @ m $dMonadIO
+                 } in
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad
+                   @ Test.Hspec.Slow.SlowResults
+                   @ ()
+                   (Control.Monad.IO.Class.liftIO
+                      @ m
+                      $dMonadIO
+                      @ Test.Hspec.Slow.SlowResults
+                      (GHC.Conc.Sync.readTVarIO1 @ Test.Hspec.Slow.SlowResults eta)
+                        `cast`
+                      (Sym (GHC.Types.NTCo:IO[0] <Test.Hspec.Slow.SlowResults>_R)))
+                   (\ slows :: Test.Hspec.Slow.SlowResults ->
+                    GHC.Base.>>
+                      @ m
+                      $dMonad
+                      @ ()
+                      @ ()
+                      lvl
+                      (lvl1
+                         (Test.Hspec.Slow.slowReport4 slows)
+                           `cast`
+                         (Sym (GHC.Types.NTCo:IO[0] <()>_R))))) -}
+32e371f4a64aae8fbddf6c795adb7121
+  slowReport1 ::
+    Test.Hspec.Slow.SlowResultTracker
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U(U)><L,U>, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ w :: Test.Hspec.Slow.SlowResultTracker
+                   w1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case w of ww { GHC.Conc.Sync.TVar ww1 ->
+                 Test.Hspec.Slow.$wa ww1 w1 }) -}
+971981c0a97d69a4482e88cac8b85f59
+  slowReport2 ::
+    [([GHC.Types.Char], Data.Time.Clock.UTC.NominalDiffTime)]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+b718c6830d554140b944a32d03f80646
+  slowReport3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Slow examples:"#) -}
+1e3512f9c0e4a13aa708474a7a32625d
+  slowReport4 ::
+    [([GHC.Types.Char], Data.Time.Clock.UTC.NominalDiffTime)]
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <S,1*U><L,U> -}
+852393fc9cbdba128610b4034981191d
+  slowReport5 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   Test.Hspec.Slow.slowReport3
+                   GHC.Types.True
+                   eta) -}
+8bdabef3135bdb106c31fda98767fdde
+  stopwatch ::
+    Control.Monad.IO.Class.MonadIO m =>
+    m a -> m (a, Data.Time.Clock.UTC.NominalDiffTime)
+  {- Arity: 2, Strictness: <S(SL),U(1*U,C(U))><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a
+                   $dMonadIO :: Control.Monad.IO.Class.MonadIO m
+                   eta :: m a ->
+                 let {
+                   lvl :: m Data.Time.Clock.UTC.UTCTime
+                   = Control.Monad.IO.Class.liftIO
+                       @ m
+                       $dMonadIO
+                       @ Data.Time.Clock.UTC.UTCTime
+                       Data.Time.Clock.getCurrentTime1
+                         `cast`
+                       (Sym (GHC.Types.NTCo:IO[0] <Data.Time.Clock.UTC.UTCTime>_R))
+                 } in
+                 let {
+                   $dMonad :: GHC.Base.Monad m
+                   = Control.Monad.IO.Class.$p1MonadIO @ m $dMonadIO
+                 } in
+                 GHC.Base.>>=
+                   @ m
+                   $dMonad
+                   @ Data.Time.Clock.UTC.UTCTime
+                   @ (a, Data.Time.Clock.UTC.NominalDiffTime)
+                   lvl
+                   (\ start :: Data.Time.Clock.UTC.UTCTime ->
+                    GHC.Base.>>=
+                      @ m
+                      $dMonad
+                      @ a
+                      @ (a, Data.Time.Clock.UTC.NominalDiffTime)
+                      eta
+                      (\ a1 :: a ->
+                       case a1 of a2 { DEFAULT ->
+                       GHC.Base.>>=
+                         @ m
+                         $dMonad
+                         @ Data.Time.Clock.UTC.UTCTime
+                         @ (a, Data.Time.Clock.UTC.NominalDiffTime)
+                         lvl
+                         (\ end :: Data.Time.Clock.UTC.UTCTime ->
+                          GHC.Base.return
+                            @ m
+                            $dMonad
+                            @ (a, Data.Time.Clock.UTC.NominalDiffTime)
+                            (a2,
+                             case end of ww { Data.Time.Clock.UTC.UTCTime ww1 ww2 ->
+                             case start of ww3 { Data.Time.Clock.UTC.UTCTime ww4 ww5 ->
+                             (GHC.Integer.Type.minusInteger
+                                (Data.Time.Clock.POSIX.$wutcTimeToPOSIXSeconds ww1 ww2)
+                                  `cast`
+                                (Trans
+                                     (Data.Time.Clock.UTC.NTCo:NominalDiffTime[0])
+                                     (Data.Fixed.NTCo:Fixed[0] <Data.Fixed.E12>_P))
+                                (Data.Time.Clock.POSIX.$wutcTimeToPOSIXSeconds ww4 ww5)
+                                  `cast`
+                                (Trans
+                                     (Data.Time.Clock.UTC.NTCo:NominalDiffTime[0])
+                                     (Data.Fixed.NTCo:Fixed[0] <Data.Fixed.E12>_P)))
+                               `cast`
+                             (Trans
+                                  (Sym (Data.Fixed.NTCo:Fixed[0] <Data.Fixed.E12>_P))
+                                  (Sym (Data.Time.Clock.UTC.NTCo:NominalDiffTime[0]))) } })) }))) -}
+6800b62e2c6040eb23500550cd8711b2
+  timed ::
+    (Control.Monad.IO.Class.MonadIO m,
+     Test.Hspec.Core.Example.Example (m a)) =>
+    GHC.Base.String
+    -> Test.Hspec.Slow.SlowResultTracker
+    -> Test.Hspec.Slow.SlowConfiguration
+    -> m a
+    -> Test.Hspec.Core.Spec.Monad.SpecWith
+         (Test.Hspec.Core.Example.Arg (m a))
+  {- Arity: 7,
+     Strictness: <L,U(U,C(U))><L,C(U)><L,U><L,U(U)><L,U><L,U><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Test.Hspec.Slow.timed1
+                  `cast`
+                (forall (m :: * -> *) a.
+                 <Control.Monad.IO.Class.MonadIO m>_R
+                 ->_R <Test.Hspec.Core.Example.Example (m a)>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <Test.Hspec.Slow.SlowResultTracker>_R
+                 ->_R <Test.Hspec.Slow.SlowConfiguration>_R
+                 ->_R <m a>_R
+                 ->_R Trans
+                          (Sym (GHC.Types.NTCo:IO[0]
+                                    <((),
+                                      [Test.Hspec.Core.Tree.SpecTree
+                                         (Test.Hspec.Core.Example.Arg (m a))])>_R))
+                          (Trans
+                               (Sym (Control.Monad.Trans.Writer.Lazy.NTCo:WriterT[0]
+                                         <[Test.Hspec.Core.Tree.SpecTree
+                                             (Test.Hspec.Core.Example.Arg (m a))]>_N
+                                         <GHC.Types.IO>_R
+                                         <()>_N))
+                               (Sym (Test.Hspec.Core.Spec.Monad.NTCo:SpecM[0]
+                                         <Test.Hspec.Core.Example.Arg (m a)>_N) <()>_N))) -}
+3d2a62bfeae2fc5f103752fc28558ca1
+  timed1 ::
+    (Control.Monad.IO.Class.MonadIO m,
+     Test.Hspec.Core.Example.Example (m a)) =>
+    GHC.Base.String
+    -> Test.Hspec.Slow.SlowResultTracker
+    -> Test.Hspec.Slow.SlowConfiguration
+    -> m a
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          ((),
+           [Test.Hspec.Core.Tree.SpecTree
+              (Test.Hspec.Core.Example.Arg (m a))]) #)
+  {- Arity: 7,
+     Strictness: <L,U(U,C(U))><L,C(U)><L,U><L,U(U)><L,U><L,U><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a
+                   $dMonadIO :: Control.Monad.IO.Class.MonadIO m
+                   $dExample :: Test.Hspec.Core.Example.Example (m a)
+                   s :: GHC.Base.String
+                   t :: Test.Hspec.Slow.SlowResultTracker
+                   c :: Test.Hspec.Slow.SlowConfiguration
+                   a1 :: m a
+                   eta2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 (# eta2,
+                    (GHC.Tuple.(),
+                     GHC.Types.:
+                       @ (Test.Hspec.Core.Tree.SpecTree
+                            (Test.Hspec.Core.Example.Arg (m a)))
+                       (Test.Hspec.Core.Tree.specItem
+                          @ (m a)
+                          Test.Hspec.Slow.timed2
+                            `cast`
+                          (Sym (GHC.IP.NTCo:IP[0] <"loc">_N <GHC.Stack.CallStack>_N))
+                          $dExample
+                          s
+                          ((Test.Hspec.Slow.trackedAction @ m @ a $dMonadIO s t a1)
+                             `cast`
+                           (Control.Monad.Trans.Reader.NTCo:ReaderT[0]
+                                <Test.Hspec.Slow.SlowConfiguration>_R <m>_R <a>_N)
+                             c))
+                       (GHC.Types.[]
+                          @ (Test.Hspec.Core.Tree.SpecTree
+                               (Test.Hspec.Core.Example.Arg (m a))))) #)) -}
+8ba0e3c7c21367ac927e82b36266d1ee
+  timed10 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "src/Test/Hspec/Slow.hs"#) -}
+25c2a7d144a7f4cb60b64fc5f89e117e
+  timed11 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Test.Hspec.Slow"#) -}
+54c5f94252342d7ed8fa99b0ebd5ef54
+  timed12 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "hspec_4IgkMxl3I7R95RltXPXsx5"#) -}
+5486b50fb4ef8038abdbc0eaeafb9e3f
+  timed13 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "it"#) -}
+8987ad9135ad4e0a349c94be39230959
+  timed2 :: GHC.Stack.CallStack
+  {- Unfolding: (GHC.Stack.CallStack Test.Hspec.Slow.timed3) -}
+d3d47fb429e5df9b30702f942d218919
+  timed3 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Test.Hspec.Core.Spec.it2
+                   Test.Hspec.Slow.timed4) -}
+39c473295b0199474e843e3f6fe2a60c
+  timed4 :: [([GHC.Types.Char], GHC.SrcLoc.SrcLoc)]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+                   Test.Hspec.Slow.timed5
+                   (GHC.Types.[] @ ([GHC.Types.Char], GHC.SrcLoc.SrcLoc))) -}
+4d7e068333dacc53402a954fac54ee9e
+  timed5 :: ([GHC.Types.Char], GHC.SrcLoc.SrcLoc)
+  {- Strictness: m,
+     Unfolding: ((Test.Hspec.Slow.timed13, Test.Hspec.Slow.timed6)) -}
+ded1e66cf849c14ca7180c93928f892d
+  timed6 :: GHC.SrcLoc.SrcLoc
+  {- Strictness: m,
+     Unfolding: (GHC.SrcLoc.SrcLoc
+                   Test.Hspec.Slow.timed12
+                   Test.Hspec.Slow.timed11
+                   Test.Hspec.Slow.timed10
+                   Test.Hspec.Slow.timed9
+                   Test.Hspec.Slow.timed8
+                   Test.Hspec.Slow.timed9
+                   Test.Hspec.Slow.timed7) -}
+be5a4ec131492370e903b25b46997117
+  timed7 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 19) -}
+fe776b59ef53040e2971d9f29b968b0d
+  timed8 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 17) -}
+cca8e5cefec7eae2c62931da8951fb0c
+  timed9 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 44) -}
+ed1caeb08354f0bfa96f6ac9f59ec952
+  timedHspec ::
+    Test.Hspec.Slow.SlowResultTracker
+    -> Test.Hspec.Core.Spec.Monad.SpecWith () -> GHC.Types.IO ()
+  {- Arity: 3, Strictness: <L,U(U)><L,1*C1(U(U,1*U(A,1*U)))><L,U>,
+     Unfolding: InlineRule (0, True, True)
+                Test.Hspec.Slow.timedHspec1
+                  `cast`
+                (<Test.Hspec.Slow.SlowResultTracker>_R
+                 ->_R <Test.Hspec.Core.Spec.Monad.SpecWith ()>_R
+                 ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R)) -}
+e6f55e28f695077e3c86aa09eb678399
+  timedHspec1 ::
+    Test.Hspec.Slow.SlowResultTracker
+    -> Test.Hspec.Core.Spec.Monad.SpecWith ()
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3, Strictness: <L,U(U)><L,1*C1(U(U,1*U(A,1*U)))><L,U>,
+     Unfolding: (\ t :: Test.Hspec.Slow.SlowResultTracker
+                   x :: Test.Hspec.Core.Spec.Monad.SpecWith ()
+                   eta :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                 case Test.Hspec.Core.Runner.hspec2
+                        Test.Hspec.Options.defaultConfig
+                        (\ eta1 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                         case x `cast`
+                              (Trans
+                                   (Test.Hspec.Core.Spec.Monad.NTCo:SpecM[0] <()>_N <()>_N)
+                                   (Trans
+                                        (Control.Monad.Trans.Writer.Lazy.NTCo:WriterT[0]
+                                             <[Test.Hspec.Core.Tree.SpecTree ()]>_N
+                                             <GHC.Types.IO>_R
+                                             <()>_N)
+                                        (GHC.Types.NTCo:IO[0]
+                                             <((), [Test.Hspec.Core.Tree.SpecTree ()])>_R)))
+                                eta1 of ds1 { (#,#) ipv ipv1 ->
+                         (# ipv,
+                            (GHC.Tuple.(),
+                             GHC.Types.:
+                               @ (Test.Hspec.Core.Tree.Tree
+                                    (Test.Hspec.Core.Example.ActionWith ())
+                                    (Test.Hspec.Core.Tree.Item ()))
+                               (Test.Hspec.Core.Tree.NodeWithCleanup
+                                  @ (Test.Hspec.Core.Example.ActionWith ())
+                                  @ (Test.Hspec.Core.Tree.Item ())
+                                  (\ ds :: () eta2 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                                   Test.Hspec.Slow.slowReport1 t eta2)
+                                    `cast`
+                                  (<()>_R ->_R Sym (GHC.Types.NTCo:IO[0] <()>_R))
+                                  (case ipv1 of wild { (,) ds2 w1 -> w1 }))
+                               (GHC.Types.[]
+                                  @ (Test.Hspec.Core.Tree.Tree
+                                       (Test.Hspec.Core.Example.ActionWith ())
+                                       (Test.Hspec.Core.Tree.Item ())))) #) })
+                          `cast`
+                        (Trans
+                             (Sym (GHC.Types.NTCo:IO[0]
+                                       <((), [Test.Hspec.Core.Tree.SpecTree ()])>_R))
+                             (Trans
+                                  (Sym (Control.Monad.Trans.Writer.Lazy.NTCo:WriterT[0]
+                                            <[Test.Hspec.Core.Tree.SpecTree ()]>_N
+                                            <GHC.Types.IO>_R
+                                            <()>_N))
+                                  (Sym (Test.Hspec.Core.Spec.Monad.NTCo:SpecM[0] <()>_N) <()>_N)))
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of wild { Test.Hspec.Core.Runner.Summary ds ds2 ->
+                 case ds2 of wild1 { GHC.Types.I# x1 ->
+                 case x1 of wild2 {
+                   DEFAULT -> System.Exit.die2 @ () ipv
+                   0 -> (# ipv, GHC.Tuple.() #) } } } }) -}
+94ca5c91d6d29b3be229a4c1a5a2cf94
+  trackedAction ::
+    Control.Monad.IO.Class.MonadIO m =>
+    GHC.Base.String
+    -> Test.Hspec.Slow.SlowResultTracker
+    -> m a
+    -> Control.Monad.Trans.Reader.ReaderT
+         Test.Hspec.Slow.SlowConfiguration m a
+  {- Arity: 4, Strictness: <L,U(U,C(U))><L,U><L,U(U)><L,U>,
+     Unfolding: (\ @ (m :: * -> *)
+                   @ a
+                   $dMonadIO :: Control.Monad.IO.Class.MonadIO m
+                   eta :: GHC.Base.String
+                   eta1 :: Test.Hspec.Slow.SlowResultTracker
+                   eta2 :: m a ->
+                 let {
+                   $dMonad :: GHC.Base.Monad m
+                   = Control.Monad.IO.Class.$p1MonadIO @ m $dMonadIO
+                 } in
+                 let {
+                   a1 :: Test.Hspec.Slow.SlowConfiguration
+                         -> m Test.Hspec.Slow.SlowConfiguration
+                   = GHC.Base.return @ m $dMonad @ Test.Hspec.Slow.SlowConfiguration
+                 } in
+                 let {
+                   eta3 :: m (a, Data.Time.Clock.UTC.NominalDiffTime)
+                   = Test.Hspec.Slow.stopwatch @ m @ a $dMonadIO eta2
+                 } in
+                 let {
+                   lvl :: Test.Hspec.Slow.SlowConfiguration -> m a {- Arity: 1 -}
+                   = \ a2 :: Test.Hspec.Slow.SlowConfiguration ->
+                     let {
+                       a3 :: Data.Fixed.Pico
+                       = case a2 of wild { Test.Hspec.Slow.SlowConfiguration ds ->
+                         case ds of wild1 { GHC.Types.I# i ->
+                         case GHC.Integer.Type.smallInteger i of dt { DEFAULT ->
+                         Data.Fixed.$w$cfromRational
+                           @ Data.Fixed.E12
+                           Data.Fixed.$fHasResolutionE12_$cresolution
+                             `cast`
+                           (Sym (Data.Fixed.NTCo:HasResolution[0] <Data.Fixed.E12>_N))
+                           dt
+                           GHC.Real.$fEnumRatio2 } } }
+                     } in
+                     GHC.Base.>>=
+                       @ m
+                       $dMonad
+                       @ (a, Data.Time.Clock.UTC.NominalDiffTime)
+                       @ a
+                       eta3
+                       (\ a4 :: (a, Data.Time.Clock.UTC.NominalDiffTime) ->
+                        case a4 of wild { (,) result d ->
+                        case GHC.Integer.Type.gtInteger#
+                               d `cast`
+                               (Trans
+                                    (Data.Time.Clock.UTC.NTCo:NominalDiffTime[0])
+                                    (Data.Fixed.NTCo:Fixed[0] <Data.Fixed.E12>_P))
+                               a3
+                                 `cast`
+                               (Data.Fixed.NTCo:Fixed[0] <Data.Fixed.E12>_P) of wild1 { DEFAULT ->
+                        case GHC.Prim.tagToEnum# @ GHC.Types.Bool wild1 of wild2 {
+                          GHC.Types.False -> GHC.Base.return @ m $dMonad @ a result
+                          GHC.Types.True
+                          -> let {
+                               m1 :: m a = GHC.Base.return @ m $dMonad @ a result
+                             } in
+                             GHC.Base.>>=
+                               @ m
+                               $dMonad
+                               @ ()
+                               @ a
+                               (Control.Monad.IO.Class.liftIO
+                                  @ m
+                                  $dMonadIO
+                                  @ ()
+                                  (GHC.Prim.atomically#
+                                     @ ()
+                                     (\ eta4 :: GHC.Prim.State# GHC.Prim.RealWorld[OneShot] ->
+                                      case eta1 of wild3 { GHC.Conc.Sync.TVar tvar# ->
+                                      case GHC.Prim.readTVar#
+                                             @ GHC.Prim.RealWorld
+                                             @ Test.Hspec.Slow.SlowResults
+                                             tvar#
+                                             eta4 of ds1 { (#,#) ipv ipv1 ->
+                                      case GHC.Prim.writeTVar#
+                                             @ GHC.Prim.RealWorld
+                                             @ Test.Hspec.Slow.SlowResults
+                                             tvar#
+                                             (GHC.Base.++
+                                                @ (GHC.Base.String,
+                                                   Data.Time.Clock.UTC.NominalDiffTime)
+                                                ipv1
+                                                (GHC.Types.:
+                                                   @ (GHC.Base.String,
+                                                      Data.Time.Clock.UTC.NominalDiffTime)
+                                                   (eta, d)
+                                                   (GHC.Types.[]
+                                                      @ (GHC.Base.String,
+                                                         Data.Time.Clock.UTC.NominalDiffTime))))
+                                             ipv of s2# { DEFAULT ->
+                                      (# s2#, GHC.Tuple.() #) } } }))
+                                    `cast`
+                                  (Sym (GHC.Types.NTCo:IO[0] <()>_R)))
+                               (\ a5 :: () -> m1) } } })
+                 } in
+                 (\ r1 :: Test.Hspec.Slow.SlowConfiguration ->
+                  GHC.Base.>>=
+                    @ m
+                    $dMonad
+                    @ Test.Hspec.Slow.SlowConfiguration
+                    @ a
+                    (a1 r1)
+                    lvl)
+                   `cast`
+                 (Sym (Control.Monad.Trans.Reader.NTCo:ReaderT[0]
+                           <Test.Hspec.Slow.SlowConfiguration>_R <m>_R <a>_N))) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
