@@ -7,16 +7,16 @@ Track and display slow specs in Hspec runs.
 ```haskell
 main :: IO ()
 main = do
-  conf <- configure 1 -- track tests that take longer than 1s
-  timedHspec conf $ do
+  conf <- configure 1
+  timedHspec conf $ \timed -> do
     describe "Main" $ do
-     timed "Example 1" conf $ do
+     timed "Example 1" $ do
        threadDelay 3000000
        1 `shouldBe` 1
-     timed "Example 2" conf $ do
+     timed "Example 2" $ do
        threadDelay 1000
        1 `shouldBe` 1
-     timed "Example 3" conf $ do
+     timed "Example 3" $ do
        threadDelay 4000000
        1 `shouldBe` 1
 ```
@@ -41,7 +41,7 @@ Finished in 7.0152 seconds
 Parallel specs are supported. They are run similarly to above:
 
 ```haskell
-timedHspec conf $ parallel $ do
+timedHspecParallel conf $ \timed -> do
   -- ...
 ```
 
