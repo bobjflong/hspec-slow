@@ -13,8 +13,14 @@ type SlowResults = [(String, NominalDiffTime)]
 type SlowResultTracker = TVar SlowResults
 
 data SlowConfiguration = SlowConfiguration {
-  duration :: Int
+  duration :: Int,
+  tracker :: SlowResultTracker
 }
+
+configure :: Int -> IO SlowConfiguration
+configure x =
+  newTVarIO [] >>= \t ->
+    return (SlowConfiguration x t)
 
 stopwatch :: MonadIO m => m a -> m (a, NominalDiffTime)
 stopwatch x = do
@@ -23,13 +29,13 @@ stopwatch x = do
   end <- liftIO $ getCurrentTime
   return (a, end `diffUTCTime` start)
 
-trackedAction :: MonadIO m => String -> SlowResultTracker -> m a -> ReaderT SlowConfiguration m a
-trackedAction s t m = do
+trackedAction :: MonadIO m => String -> m a -> ReaderT SlowConfiguration m a
+trackedAction s m = do
   conf <- ask
   (result, d) <- lift (stopwatch m)
   if (d > (realToFrac . duration $ conf))
     then do
-      liftIO $ atomically $ modifyTVar t (++ [(s, d)])
+      liftIO $ atomically $ modifyTVar (tracker conf) (++ [(s, d)])
       return result
     else do
       return result
@@ -37,16 +43,16 @@ trackedAction s t m = do
 timed
   :: (MonadIO m, Example (m a)) =>
      String
-     -> SlowResultTracker
      -> SlowConfiguration
      -> m a
      -> SpecWith (Arg (m a))
-timed s t c a = it s $ runReaderT (trackedAction s t a) c
+timed s c a = it s $ runReaderT (trackedAction s a) c
 
-slowReport :: (MonadIO m) => SlowResultTracker -> m ()
+slowReport :: (MonadIO m) => SlowConfiguration -> m ()
 slowReport s = do
-  slows <- liftIO $ readTVarIO s
+  slows <- liftIO $ readTVarIO (tracker s)
   liftIO $ putStrLn "Slow examples:"
   liftIO $ mapM_ (\(t, v) -> putStrLn $ (show v) ++ ": " ++ t) slows
 
+timedHspec :: SlowConfiguration -> SpecWith () -> IO ()
 timedHspec t x = hspec $ (afterAll_ . slowReport) t $ x
