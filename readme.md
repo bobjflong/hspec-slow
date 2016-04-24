@@ -4,8 +4,6 @@ Track and display slow specs in Hspec runs.
 
 ## Example spec
 
-You need to create a TVar to hold slow results, then hopefully the API is familiar:
-
 ```haskell
 main :: IO ()
 main = do
