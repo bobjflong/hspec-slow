@@ -1,6 +1,11 @@
 {-# LANGUAGE BangPatterns #-}
+{-# LANGUAGE RankNTypes   #-}
 
-module Test.Hspec.Slow where
+module Test.Hspec.Slow (
+    configure,
+    timedHspec,
+    timedHspecParallel
+  ) where
 
 import           Control.Concurrent.STM.TVar
 import           Control.Monad.IO.Class
@@ -14,7 +19,7 @@ type SlowResultTracker = TVar SlowResults
 
 data SlowConfiguration = SlowConfiguration {
   duration :: Int,
-  tracker :: SlowResultTracker
+  tracker  :: SlowResultTracker
 }
 
 configure :: Int -> IO SlowConfiguration
@@ -40,13 +45,10 @@ trackedAction s m = do
     else do
       return result
 
-timed
-  :: (MonadIO m, Example (m a)) =>
-     String
-     -> SlowConfiguration
-     -> m a
-     -> SpecWith (Arg (m a))
-timed s c a = it s $ runReaderT (trackedAction s a) c
+type Timer = forall m a. (MonadIO m, Example (m a)) => String -> m a -> SpecWith (Arg (m a))
+
+timed :: SlowConfiguration -> Timer
+timed c s a = it s $ runReaderT (trackedAction s a) c
 
 slowReport :: (MonadIO m) => SlowConfiguration -> m ()
 slowReport s = do
@@ -54,5 +56,8 @@ slowReport s = do
   liftIO $ putStrLn "Slow examples:"
   liftIO $ mapM_ (\(t, v) -> putStrLn $ (show v) ++ ": " ++ t) slows
 
-timedHspec :: SlowConfiguration -> SpecWith () -> IO ()
-timedHspec t x = hspec $ (afterAll_ . slowReport) t $ x
+timedHspec :: SlowConfiguration -> (Timer -> SpecWith ()) -> IO ()
+timedHspec t x = hspec $ (afterAll_ . slowReport) t $ x (timed t)
+
+timedHspecParallel :: SlowConfiguration -> (Timer -> SpecWith ()) -> IO ()
+timedHspecParallel t x = hspec $ (afterAll_ . slowReport) t $ parallel $ x (timed t)
