@@ -18,7 +18,7 @@ data SlowConfiguration = SlowConfiguration {
 
 stopwatch :: MonadIO m => m a -> m (a, NominalDiffTime)
 stopwatch x = do
-  start <- liftIO $ getCurrentTimebea
+  start <- liftIO $ getCurrentTime
   !a <- x
   end <- liftIO $ getCurrentTime
   return (a, end `diffUTCTime` start)
