@@ -7,7 +7,7 @@ import Control.Monad.Reader
 main :: IO ()
 main = do
   conf <- configure 1
-  timedHspec conf $ do
+  timedHspec conf $ parallel $ do
     describe "Main" $ do
      timed "Example 1" conf $ do
        threadDelay 3000000
