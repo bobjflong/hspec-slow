@@ -41,7 +41,7 @@ Finished in 7.0141 seconds
 Parallel specs are supported. They are run similarly to above:
 
 ```haskell
-timedHspecParallel conf $ \timed -> do
+timedHspecParallel conf $ \it -> do
   -- ...
 ```
 
