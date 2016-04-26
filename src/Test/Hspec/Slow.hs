@@ -52,8 +52,9 @@ timed c s a = it s $ runReaderT (trackedAction s a) c
 slowReport :: (MonadIO m) => SlowConfiguration -> m ()
 slowReport s = do
   slows <- liftIO $ readTVarIO (tracker s)
-  liftIO $ putStrLn "Slow examples:"
-  liftIO $ mapM_ (\(t, v) -> putStrLn $ show v ++ ": " ++ t) slows
+  liftIO $ do
+    putStrLn "Slow examples:"
+    mapM_ (\(t, v) -> putStrLn $ show v ++ ": " ++ t) slows
 
 timedHspec :: SlowConfiguration -> (Timer -> SpecWith ()) -> IO ()
 timedHspec t x = hspec $ (afterAll_ . slowReport) t $ x (timed t)
