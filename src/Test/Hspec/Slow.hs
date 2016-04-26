@@ -51,8 +51,8 @@ timed c s a = it s $ runReaderT (trackedAction s a) c
 
 slowReport :: (MonadIO m) => SlowConfiguration -> m ()
 slowReport s = do
-  slows <- liftIO $ readTVarIO (tracker s)
   liftIO $ do
+    slows <- readTVarIO (tracker s)
     putStrLn "Slow examples:"
     mapM_ (\(t, v) -> putStrLn $ show v ++ ": " ++ t) slows
 
