@@ -18,7 +18,7 @@ main = do
         1 `shouldBe` 1
       it "should baz" $ do
         threadDelay 4000000
-        1 `shouldBe` 1```
+        1 `shouldBe` 1
 ```
 
 ## Example Output
