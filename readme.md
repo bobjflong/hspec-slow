@@ -1,3 +1,8 @@
+# Please read: package transferred
+
+👋 Maintenance of this package has been transferred to https://github.com/riskbook/hspec-slow
+
+
 ## hspec-slow
 
 Track and display slow specs in Hspec runs.
