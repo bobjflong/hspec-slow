@@ -26,6 +26,8 @@ main = do
         1 `shouldBe` 1
 ```
 
+Checkout [hspec slow everything](#hspec-slow-everything) to run this on your entire test suite.
+
 ## Example Output
 
 ```
@@ -63,4 +65,26 @@ Slow examples:
 
 Finished in 4.0024 seconds
 3 examples, 0 failures
+```
+
+## hspec slow everything
+
+`Main.hs`:
+```
+module Main where
+
+import qualified Spec
+import Test.Hspec.Slow
+import Test.Hspec(hspec)
+import ClassyPrelude
+
+main :: IO ()
+main = do
+  config <- configure 2
+  hspec $ timeThese config Spec.spec
+```
+`Spec.hs`:
+```
+{-# OPTIONS_GHC -fno-warn-implicit-prelude #-}
+{-# OPTIONS_GHC -F -pgmF hspec-discover -optF --module-name=Spec #-}
 ```

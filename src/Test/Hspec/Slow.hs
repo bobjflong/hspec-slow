@@ -4,7 +4,8 @@
 module Test.Hspec.Slow (
     configure,
     timedHspec,
-    timedHspecParallel
+    timedHspecParallel,
+    timeThese
   ) where
 
 import           Control.Concurrent.STM.TVar
@@ -13,6 +14,8 @@ import           Control.Monad.Reader
 import           Control.Monad.STM
 import           Data.Time.Clock
 import           Test.Hspec
+import           Data.Maybe
+import           Test.Hspec.Core.Spec
 
 type SlowResults = [(String, NominalDiffTime)]
 type SlowResultTracker = TVar SlowResults
@@ -61,3 +64,23 @@ timedHspec t x = hspec $ (afterAll_ . slowReport) t $ x (timed t)
 
 timedHspecParallel :: SlowConfiguration -> (Timer -> SpecWith ()) -> IO ()
 timedHspecParallel t x = hspec $ (afterAll_ . slowReport) t $ parallel $ x (timed t)
+
+-- | times all tests without having to use a custom `it` function
+timeThese :: SlowConfiguration -> SpecWith a -> SpecWith a
+timeThese config = (afterAll_ (slowReport config)) . mapSpecItem_ (modifyAroundAction $ adhocMeasure config)
+
+adhocMeasure :: SlowConfiguration -> Item a -> (a -> IO ()) -> a -> IO ()
+adhocMeasure config item theTestF a = runReaderT (trackedAction (makeDescription item) $ theTestF a) config
+
+makeDescription :: Item a -> String
+makeDescription item = defaultDescription (itemLocation item)  <> "\n\t" <>
+  itemRequirement item
+
+defaultDescription :: Maybe Location -> String
+defaultDescription stack = fromMaybe ("source location not found: " <> show stack)  $ do
+  Location locationFile locationLine locationColumn <- stack
+  pure $ (locationFile ++ "[" ++ show locationLine ++ ":" ++ show locationColumn ++ "]")
+
+modifyAroundAction :: (Item a -> ActionWith a -> ActionWith b) -> Item a -> Item b
+modifyAroundAction action item@Item{itemExample = e} =
+  item{ itemExample = \params aroundAction -> e params (aroundAction . action item) }

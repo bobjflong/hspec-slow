@@ -1,27 +1,33 @@
+cabal-version:       >=1.10
 name:                hspec-slow
-version:             0.1.0.0
+version:             0.2.0.1
 synopsis:            Find slow test cases
 description:         Records and prints out slow Hspec tests
-homepage:            https://github.com/bobjflong/hspec-slow#readme
 license:             BSD3
 license-file:        LICENSE
-author:              Bob Long
-maintainer:          robertjflong@gmail.com
+author:              Bob Long, riskbook <support@riskbook.com>
+maintainer:          riskbook <support@riskbook.com>
 copyright:           2016 Bob Long
 category:            Testing
 build-type:          Simple
--- extra-source-files:
-cabal-version:       >=1.10
+Homepage:            https://github.com/riskbook/hspec-slow
+Bug-reports:         https://github.com/riskbook/hspec-slow/issues
+Tested-with:         GHC==8.8.3
+extra-source-files:
+    readme.md
+    LICENSE
+    Changelog.md
 
 library
   hs-source-dirs:      src
   exposed-modules:     Test.Hspec.Slow
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 4.15
                        , stm
                        , time
                        , transformers
                        , mtl
                        , hspec
+                       , hspec-core >= 2.0.0 && < 3.0
   default-language:    Haskell2010
 
 test-suite hspec-slow-test
@@ -38,4 +44,4 @@ test-suite hspec-slow-test
 
 source-repository head
   type:     git
-  location: https://github.com/bobjflong/hspec-slow
+  location: https://github.com/riskbook/hspec-slow
